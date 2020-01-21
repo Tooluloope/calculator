@@ -4,8 +4,10 @@ import './output.style.css';
 
 export const Output = () => {
     return (
-        <div>
-            Output
+        <div className='output'>
+            <form className='form-output'>
+                <input type='number' />
+            </form>
         </div>
     )
 

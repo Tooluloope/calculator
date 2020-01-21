@@ -7,11 +7,12 @@ import { Keyboard } from './components/keyboard/keyboard.component';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className='calc-board'>
         <Input />
         <Output />
         <Keyboard />
-      </header>
+      </div>
+        
     </div>
   );
 }
