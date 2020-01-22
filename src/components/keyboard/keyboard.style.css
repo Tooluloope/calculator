@@ -4,6 +4,7 @@
 }
 .lower-keys {
     border-top: 1px solid rgba(128, 128, 128, 0.4);
+    padding-top: 10px;
 }
 .icon-history {
     float: left;
@@ -16,17 +17,28 @@
 .button {
     font-size: 30px;
     /* padding: 30px; */
-    background-color:  rgba(128, 128, 128, 0.2);
+    background-color:  rgba(210, 210, 210, 0.23);
     border: 0px solid transparent;
     outline: none;
     float: left;
-    border-radius: 30px;
-    height: 100px;
-    width: 100px;
-    /* margin: 10px; */
+    border-radius: 100px;
+    height: 70px;
+    width: 80px;
+    margin-top: 10px;
+    cursor: pointer;
     
 }
 
 .margin-3rd {
     margin-right: 15px;
+}
+#C {
+    color: #e84242;
+}
+.green {
+    color: rgba(3,154,3,0.63);
+}
+.equal {
+ background-color: rgba(3,154,3,0.63);
+ color: white;
 }
