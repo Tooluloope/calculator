@@ -1,10 +1,31 @@
 
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './keyboard.style.css';
 import '@fortawesome/fontawesome-free/css/all.css'
+import { InputContext } from '../context/input.context';
 
 
 export const Keyboard = () => {
+    const [state, dispatch] =  useContext(InputContext)
+
+    const Click = (e) => {
+        dispatch({type:'INPUT', payload: e.target.id })
+    }
+
+    useEffect(() => {
+        const buttons = document.getElementsByClassName('button')
+
+        for (let i = 0; i < buttons.length; i ++) {
+            var button = buttons[i]
+            button.addEventListener("click", Click)
+        };
+        return () => {
+            window.removeEventListener("click", Click)
+        };
+    })
+    
+    
+
     return (
         <div className='keyboard'>
             <div className='top-keys'>
