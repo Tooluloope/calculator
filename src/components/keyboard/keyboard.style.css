@@ -28,6 +28,9 @@
     cursor: pointer;
     
 }
+.button:active {
+    background-color: rgba(210, 210, 210, 0.8);
+}
 
 .margin-3rd {
     margin-right: 15px;
@@ -41,4 +44,7 @@
 .equal {
  background-color: rgba(3,154,3,0.63);
  color: white;
+}
+.equal:active {
+    background-color: rgba(3,154,3,1);
 }

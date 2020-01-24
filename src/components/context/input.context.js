@@ -7,7 +7,7 @@ export const InputContext = createContext(input)
 
 const InputReducer = (state, action) => {
     switch (action.type) {
-        case 'INPUT':
+        case 'INPUT_NUMBERS':
             return state + action.payload
         default:
             return state;
