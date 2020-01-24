@@ -8,20 +8,31 @@ import { InputContext } from '../context/input.context';
 export const Keyboard = () => {
     const [ ,dispatch] =  useContext(InputContext)
 
-    const Click = (e) => {   
-        dispatch({type:'INPUT_NUMBERS', payload: e.target.id })
+    const ClickNumbers = (e) => {  
+        dispatch({type:'INPUT_NUMBERS', payload: e.target.name })
+    }
+
+    const ClickOperators = (e) => {  
+        dispatch({type:'INPUT_OPERATORS', payload: e.target.name})
     }
 
     useEffect(() => {
         const numbers = document.getElementsByClassName('numbers')
-        const operator = document.getElementsByClassName('operator')
+        const operators = document.getElementsByClassName('operator')
+        for (let j = 0; j < operators.length; j ++) {
+            var operator = operators[j]
+            operator.addEventListener("click", ClickOperators)
+        };
 
         for (let i = 0; i < numbers.length; i ++) {
             var number = numbers[i]
-            number.addEventListener("click", Click)
+            number.addEventListener("click", ClickNumbers)
         };
+        
         return () => {
-            window.removeEventListener("click", Click)
+            window.removeEventListener("click", ClickNumbers)
+            window.removeEventListener("click", ClickOperators)
+
         };
     },[])
     
@@ -34,26 +45,26 @@ export const Keyboard = () => {
                 <i className="fas fa-backspace fa-2x icon-delete"></i>
             </div>
             <div className='lower-keys'>
-                <button className='button margin-3rd' id='C'> C</button>
-                <button className='button margin-3rd green ' id='()'> ()</button>
-                <button className='button margin-3rd green' id='%'> %</button>
-                <button className='button green operator' id='/'> /</button>
-                <button className='button margin-3rd numbers' id='7'> 7</button>
-                <button className='button margin-3rd numbers' id='8'> 8</button>
-                <button className='button margin-3rd numbers' id='9'> 9</button>
-                <button className='button green operator' id='*'> *</button>
-                <button className='button margin-3rd numbers' id='4'> 4</button>
-                <button className='button margin-3rd numbers' id='5'> 5</button>
-                <button className='button margin-3rd numbers' id='6'> 6</button>
-                <button className='button green operator' id='-'> -</button>
-                <button className='button margin-3rd numbers' id='1'> 1</button>
-                <button className='button margin-3rd numbers' id='2'> 2</button>
-                <button className='button margin-3rd numbers' id='3'> 3</button>
-                <button className='button green operator' id='+'> +</button>
-                <button className='button margin-3rd' id='+/-'> +/-</button>
-                <button className='button margin-3rd number' id='0'> 0</button>
-                <button className='button margin-3rd' id='.'> .</button>
-                <button className='button equal' id='='> =</button>
+                <button className='button margin-3rd' name='C'> C</button>
+                <button className='button margin-3rd green ' name='()'> ()</button>
+                <button className='button margin-3rd green' name='%'> %</button>
+                <button className='button green operator' name='/'> /</button>
+                <button className='button margin-3rd numbers' name='7'> 7</button>
+                <button className='button margin-3rd numbers' name='8'> 8</button>
+                <button className='button margin-3rd numbers' name='9'> 9</button>
+                <button className='button green operator' name='*'> *</button>
+                <button className='button margin-3rd numbers' name='4'> 4</button>
+                <button className='button margin-3rd numbers' name='5'> 5</button>
+                <button className='button margin-3rd numbers' name='6'> 6</button>
+                <button className='button green operator' name='-'> -</button>
+                <button className='button margin-3rd numbers' name='1'> 1</button>
+                <button className='button margin-3rd numbers' name='2'> 2</button>
+                <button className='button margin-3rd numbers' name='3'> 3</button>
+                <button className='button green operator' name='+'> +</button>
+                <button className='button margin-3rd' name='+/-'> +/-</button>
+                <button className='button margin-3rd number' name='0'> 0</button>
+                <button className='button margin-3rd' name='.'> .</button>
+                <button className='button equal' name='='> =</button>
 
                 
             
