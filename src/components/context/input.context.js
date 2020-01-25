@@ -1,17 +1,21 @@
 import React, { createContext, useReducer } from 'react'
-import { inputNumbers } from './calc.utils'
+import { inputNumbers,inputOperators } from './calc.utils'
 
 
-const input = undefined
+const initialState = {
+    input: '',
+    eval: undefined
+}
 
-export const InputContext = createContext(input)
+export const InputContext = createContext(initialState)
 
 const InputReducer = (state, action) => {
+    
     switch (action.type) {
         case 'INPUT_NUMBERS':
             return  inputNumbers( state , action.payload)
         case 'INPUT_OPERATORS':
-            return state + action.payload
+            return inputOperators( state , action.payload)
         default:
             return state;
     }
@@ -19,7 +23,7 @@ const InputReducer = (state, action) => {
 
 
 export const InputProvider = ({children}) => {
-    const [state, dispatch] = useReducer(InputReducer, input)
+    const [state, dispatch] = useReducer(InputReducer, initialState)
     return (
         <InputContext.Provider value = {[state, dispatch]} >
             {children}

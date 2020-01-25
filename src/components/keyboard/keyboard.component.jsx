@@ -9,11 +9,11 @@ export const Keyboard = () => {
     const [ ,dispatch] =  useContext(InputContext)
 
     const ClickNumbers = (e) => {  
-        dispatch({type:'INPUT_NUMBERS', payload: e.target.name })
+        dispatch({type:'INPUT_NUMBERS', payload: {input : e.target.name, eval: true} })
     }
 
     const ClickOperators = (e) => {  
-        dispatch({type:'INPUT_OPERATORS', payload: e.target.name})
+        dispatch({type:'INPUT_OPERATORS', payload: {input : e.target.name, eval: false} })
     }
 
     useEffect(() => {
@@ -62,7 +62,7 @@ export const Keyboard = () => {
                 <button className='button margin-3rd numbers' name='3'> 3</button>
                 <button className='button green operator' name='+'> +</button>
                 <button className='button margin-3rd' name='+/-'> +/-</button>
-                <button className='button margin-3rd number' name='0'> 0</button>
+                <button className='button margin-3rd numbers' name='0'> 0</button>
                 <button className='button margin-3rd' name='.'> .</button>
                 <button className='button equal' name='='> =</button>
 
