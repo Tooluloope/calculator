@@ -1,16 +1,30 @@
+import { trailZero } from "../utils"
+
 // returns a new state once a number is inputed
 export const inputNumbers = (state, payload) => {
 
     // state is a string for concat sake
     const val =  state.input + payload.input
 
+    if(state.input === '0' && payload.input === '0' ) {
+        
+        return state
+    }
+    if(state.input === '0') {
+        
+        return {input: trailZero(val), eval: undefined}
+    }
+
     // eval is initial undefined, if eval is true, it evaluates to output
     // once a number is clicked , eval is true as long as it previously wasn't undefined
+
     if(state.eval === true || state.eval === false) {
         const evals = payload.eval
         return {input: val, eval: evals}
     }
-    
+    // if (state.input === '0') {
+    //     return {input: payload.input, eval: undefined}
+    // }
     return {input: val, eval: undefined}
 }
 // returns a new state once an operator is inputed
@@ -41,5 +55,5 @@ export const evalInput = (state) => {
         return state
     }
 
-    return{input: eval(state.input)}
+    return{input: eval(state.input).toLocaleString('en')}
 }
