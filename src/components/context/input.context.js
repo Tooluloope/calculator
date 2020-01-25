@@ -12,10 +12,13 @@ export const InputContext = createContext(initialState)
 const InputReducer = (state, action) => {
     
     switch (action.type) {
+        
         case 'INPUT_NUMBERS':
             return  inputNumbers( state , action.payload)
         case 'INPUT_OPERATORS':
             return inputOperators( state , action.payload)
+        case 'DELETE_INPUT':
+            return action.payload
         default:
             return state;
     }

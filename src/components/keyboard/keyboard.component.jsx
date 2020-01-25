@@ -5,8 +5,9 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import { InputContext } from '../context/input.context';
 
 
+
 export const Keyboard = () => {
-    const [ ,dispatch] =  useContext(InputContext)
+    const [state ,dispatch] =  useContext(InputContext)
 
     const ClickNumbers = (e) => {  
         dispatch({type:'INPUT_NUMBERS', payload: {input : e.target.name, eval: true} })
@@ -15,10 +16,19 @@ export const Keyboard = () => {
     const ClickOperators = (e) => {  
         dispatch({type:'INPUT_OPERATORS', payload: {input : e.target.name, eval: false} })
     }
+    const deleteButton = () => {
+        if (state.input.length > 0) {
+            var newInput = state.input.slice(0, -1);
+            
+            dispatch({type: 'DELETE_INPUT', payload: {input:newInput, eval:false }})
+        }
+        
+    }
 
     useEffect(() => {
         const numbers = document.getElementsByClassName('numbers')
         const operators = document.getElementsByClassName('operator')
+        
         for (let j = 0; j < operators.length; j ++) {
             var operator = operators[j]
             operator.addEventListener("click", ClickOperators)
@@ -41,8 +51,8 @@ export const Keyboard = () => {
     return (
         <div className='keyboard'>
             <div className='top-keys'>
-                <i className="fas fa-history fa-2x icon-history"></i>
-                <i className="fas fa-backspace fa-2x icon-delete"></i>
+                <i  className="fas fa-history fa-2x icon-history"></i>
+                <i onClick = {deleteButton} className="fas fa-backspace fa-2x icon-delete"></i>
             </div>
             <div className='lower-keys'>
                 <button className='button margin-3rd' name='C'> C</button>

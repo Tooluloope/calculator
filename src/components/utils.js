@@ -1,3 +1,2 @@
-export const toLocale = (state) => { 
-     
-    return parseInt(state).toLocaleString('en')}
+export const toLocale = (state) =>  parseInt(state).toLocaleString('en')
+

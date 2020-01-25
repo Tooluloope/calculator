@@ -6,6 +6,8 @@ import { toLocale } from '../utils';
 
 export const Input = () => {
     const [state] =  useContext(InputContext)
+    console.log(state)
+    
     return (
         <Fragment>
             <div className='input'>
@@ -15,7 +17,7 @@ export const Input = () => {
             </div>
             <div className='output'>
                 <form className='form-output'>
-                    <input value = {state.eval  ? toLocale(eval(state.input)) : ''} type='number' />
+                    <input value = {state.eval  ? toLocale(eval(state.input)) : ''}  />
                 </form>
             </div>
         </Fragment>
