@@ -10,11 +10,11 @@ export const Keyboard = () => {
     const [state ,dispatch] =  useContext(InputContext)
 
     // dispatch action once a number is clicked
-    const ClickNumbers = (e) => {  
+    const clickNumbers = (e) => {  
         dispatch({type:'INPUT_NUMBERS', payload: {input : e.target.name, eval: true} })
     }
     // dispatch action once an operator is clicked
-    const ClickOperators = (e) => {  
+    const clickOperators = (e) => {  
         dispatch({type:'INPUT_OPERATORS', payload: {input : e.target.name, eval: false} })
     }
         // dispatch action once the delete button is clicked
@@ -40,18 +40,18 @@ export const Keyboard = () => {
         // click event for operators
         for (let j = 0; j < operators.length; j ++) {
             var operator = operators[j]
-            operator.addEventListener("click", ClickOperators)
+            operator.addEventListener("click", clickOperators)
         };
         // click event for numbers
         for (let i = 0; i < numbers.length; i ++) {
             var number = numbers[i]
-            number.addEventListener("click", ClickNumbers)
+            number.addEventListener("click", clickNumbers)
         };
         
         clear[0].addEventListener("click", clearInput)
         return () => {
-            window.removeEventListener("click", ClickNumbers)
-            window.removeEventListener("click", ClickOperators)
+            window.removeEventListener("click", clickNumbers)
+            window.removeEventListener("click", clickOperators)
 
         };
     },[])
