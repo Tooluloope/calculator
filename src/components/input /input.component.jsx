@@ -1,7 +1,7 @@
 import React, { useContext, Fragment } from 'react';
 import './input.style.css';
 import { InputContext } from '../context/input.context';
-import { toLocale, displayEval, trailZero } from '../utils';
+import { displayEval } from '../utils';
 
 
 export const Input = () => {
