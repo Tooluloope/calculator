@@ -31,3 +31,15 @@ export const inputOperators = (state, payload) => {
     return {input: val, eval: evals}
 
 }
+
+export const evalInput = (state) => {
+    if (state.input.length < 1){
+        return state
+    }
+
+    if (isNaN(+state.input.toString().split('').pop())) {
+        return state
+    }
+
+    return{input: eval(state.input)}
+}

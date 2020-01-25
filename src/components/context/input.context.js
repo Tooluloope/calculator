@@ -1,5 +1,5 @@
 import React, { createContext, useReducer } from 'react'
-import { inputNumbers,inputOperators } from './calc.utils'
+import { inputNumbers,inputOperators, evalInput } from './calc.utils'
 
 
 const initialState = {
@@ -19,6 +19,8 @@ const InputReducer = (state, action) => {
             return inputOperators( state , action.payload)
         case 'DELETE_INPUT':
             return action.payload
+        case 'EVALUATE':
+            return evalInput(state, action.payload)
         case 'CLEAR_INPUT':
             return initialState
         default:

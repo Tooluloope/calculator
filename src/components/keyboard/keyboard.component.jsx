@@ -31,11 +31,17 @@ export const Keyboard = () => {
     const clearInput = () => {
         dispatch({type: 'CLEAR_INPUT'})
     }
+    const evaluate = () => {
+        dispatch({type: 'EVALUATE'})
+    }
+
+
 
     useEffect(() => {
         const numbers = document.getElementsByClassName('numbers')
         const operators = document.getElementsByClassName('operator')
         const clear = document.getElementsByClassName('clear')
+        const equal  = document.getElementsByClassName('equal')
         
         // click event for operators
         for (let j = 0; j < operators.length; j ++) {
@@ -49,6 +55,8 @@ export const Keyboard = () => {
         };
         
         clear[0].addEventListener("click", clearInput)
+        equal[0].addEventListener("click", evaluate)
+
         return () => {
             window.removeEventListener("click", clickNumbers)
             window.removeEventListener("click", clickOperators)
@@ -85,9 +93,6 @@ export const Keyboard = () => {
                 <button className='button margin-3rd numbers' name='0'> 0</button>
                 <button className='button margin-3rd' name='.'> .</button>
                 <button className='button equal' name='='> =</button>
-
-                
-            
             </div>
         </div>
     )
