@@ -15,9 +15,11 @@ export const Input = () => {
                     <input value = {isNaN(state.input) && state.input > 0  ? toLocale(state.input) : state.input} type='text' name='input' readOnly/>
                 </form>
             </div>
+
+            
             <div className='output'>
                 <form className='form-output'>
-                    <input value = {state.eval  ? toLocale(eval(state.input)) : ''}  />
+                    <input defaultValue = {state.eval  ? toLocale(eval(state.input)) : ''}  />
                 </form>
             </div>
         </Fragment>
