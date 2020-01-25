@@ -19,7 +19,7 @@ export const Input = () => {
             
             <div className='output'>
                 <form className='form-output'>
-                    <input defaultValue = {state.eval  ? toLocale(eval(state.input)) : ''}  />
+                    <input defaultValue = {state.eval  ? toLocale(eval(state.input)) : ''} type='text' readOnly />
                 </form>
             </div>
         </Fragment>
