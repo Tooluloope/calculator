@@ -28,10 +28,14 @@ export const Keyboard = () => {
         }
         
     }
+    const clearInput = () => {
+        dispatch({type: 'CLEAR_INPUT'})
+    }
 
     useEffect(() => {
         const numbers = document.getElementsByClassName('numbers')
         const operators = document.getElementsByClassName('operator')
+        const clear = document.getElementsByClassName('clear')
         
         // click event for operators
         for (let j = 0; j < operators.length; j ++) {
@@ -44,6 +48,7 @@ export const Keyboard = () => {
             number.addEventListener("click", ClickNumbers)
         };
         
+        clear[0].addEventListener("click", clearInput)
         return () => {
             window.removeEventListener("click", ClickNumbers)
             window.removeEventListener("click", ClickOperators)
