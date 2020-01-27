@@ -29,7 +29,10 @@ input[type=number] {
 
 .App.dark {
   text-align: center;
-  background-color: white;
+  background: url(./assets/calcBg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
