@@ -1,0 +1,8 @@
+1) Infinity
+2) history component
+3) Brackets
+4) Percentage
+5) decimal
+6) clear history
+7)refactor
+
