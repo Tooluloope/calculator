@@ -4,5 +4,7 @@
 4) Percentage
 5) decimal
 6) clear history
-7)refactor
+7)square root
+8) square
+9) power
 
