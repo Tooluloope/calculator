@@ -34,6 +34,10 @@
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     
+    
+}
+.dark .button {
+    color: white;
 }
 .button:active {
     background-color: rgba(210, 210, 210, 0.8);
@@ -43,7 +47,7 @@
     margin-right: 15px;
 }
 #C {
-    color: #e84242;
+    color: #e84242 ;
 }
 .green {
     color: rgba(3,154,3,0.63);

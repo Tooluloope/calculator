@@ -3,8 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { OutputProvider } from './components/context/output.context';
+import { InputProvider } from './components/context/input.context';
+import { ThemeProvider } from './components/context/theme.context';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+
+    <OutputProvider>
+    <InputProvider>
+    <ThemeProvider>
+      <App />
+    
+    </ThemeProvider>
+    </InputProvider>
+    </OutputProvider>
+
+, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

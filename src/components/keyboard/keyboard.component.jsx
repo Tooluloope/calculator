@@ -73,7 +73,7 @@ export const Keyboard = () => {
                 <i onClick = {deleteButton} className="fas fa-backspace fa-2x icon-delete"></i>
             </div>
             <div className='lower-keys'>
-                <button className='button margin-3rd clear' name='C'> C</button>
+                <button className='button margin-3rd clear' name='C' id='C'> C</button>
                 <button className='button margin-3rd green ' name='()'> ()</button>
                 <button className='button margin-3rd green' name='%'> %</button>
                 <button className='button green operator' name='/'> /</button>

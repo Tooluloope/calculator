@@ -1,14 +1,15 @@
 import React, { createContext, useReducer } from 'react'
+import { getMode, setMode } from './calc.utils'
 
 
-const darkMode = false
+const darkMode = getMode()
 
 export const ThemeContext = createContext(darkMode)
 
 const ThemeReducer = (state, action) => {
     switch (action.type) {
         case 'CHANGE_MODE':
-            return !state  
+            return setMode(state)  
         default:
             return state;
     }

@@ -3,7 +3,7 @@
     margin: 20px auto 50px auto;
 }
 
-.form-input input {
+.light .form-input input {
     width: 100%;
     height: 40px;
     font-size: 40px;
@@ -12,6 +12,17 @@
     outline: transparent;
     text-align: right;
 }
+.dark .form-input input {
+    width: 100%;
+    height: 40px;
+    font-size: 40px;
+    background-color: black;
+    border: 0px solid transparent;
+    outline: transparent;
+    text-align: right;
+    color: white;
+
+}
 
 
 .output {
@@ -19,7 +30,7 @@
     margin: 20px auto;
 }
 
-.form-output input {
+.light .form-output input {
     width: 100%;
     height: 40px;
     font-size: 30px;
@@ -28,4 +39,14 @@
     outline: transparent;
     text-align: right;
     color: #00000052;
+}
+.dark .form-output input {
+    width: 100%;
+    height: 40px;
+    font-size: 30px;
+    background-color: black;
+    border: 0px solid transparent;
+    outline: transparent;
+    text-align: right;
+    color: gray;
 }

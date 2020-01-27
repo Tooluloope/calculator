@@ -6,11 +6,17 @@ export const Toggle = () => {
     const [state, dispatch] =  useContext(ThemeContext)
     console.log(state)
     return (
-        <div>
-            <label className="switch">
-                <input onChange = { () => dispatch({type:'CHANGE_MODE'})}  type="checkbox" />>
-                <span className="slider round"></span>
-            </label>
+        
+        <div className='toggle'>
+            <span   className={`${state ? "grey" : "yellow" } icon`}>☀︎</span>
+             
+            <span >
+                <input checked={state} onChange = { () => dispatch({type:'CHANGE_MODE'})} className="tgl tgl-light" id="cb1" type="checkbox"/>
+                <label className="tgl-btn" htmlFor="cb1"></label>
+            </span>
+             
+             
+            <span className={`${state ? "slateblue" : "grey" } icon`}>☾</span>
         </div>
     )
 

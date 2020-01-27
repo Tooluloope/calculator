@@ -57,3 +57,38 @@ export const evalInput = (state) => {
 
     return{input: eval(state.input).toLocaleString('en')}
 }
+
+// Get reading mode theme
+export const getMode = () => {
+    const isReturningUser = "dark" in localStorage;
+    const userPreference = getUserPreference()
+    const savedMode = JSON.parse(localStorage.getItem("dark"));
+    
+    
+    // if user has a default system reading mode
+    if(userPreference) {
+      
+      return userPreference;
+    }
+     // if mode was saved --> dark / light
+     else if (isReturningUser ) {
+      return savedMode;
+    } 
+    return false
+  }
+// get user's system preference
+const getUserPreference = () => {
+    if (window.matchMedia) {
+      return window.matchMedia("(prefers-color-scheme: dark)").matches
+    }
+  }
+
+export const setMode = (payload) => {
+    storeInLocalStorage(!payload)
+    return !payload
+}
+
+// Store darkMode value in local storage
+const storeInLocalStorage = (payload) => {
+    localStorage.setItem("dark", JSON.stringify(payload));
+}

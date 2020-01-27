@@ -7,8 +7,6 @@ import { displayEval } from '../utils';
 export const Input = () => {
     const [state] =  useContext(InputContext)
     console.log(state)
-
-    
     return (
         <Fragment>
             <div className='input'>
